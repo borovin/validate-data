@@ -1,5 +1,5 @@
 {
-  "name": "validate-data",
+  "name": "@basket/validate-data",
   "version": "1.0.0",
   "description": "function for validate js data",
   "main": "index.js",
