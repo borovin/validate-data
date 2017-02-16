@@ -18,7 +18,7 @@ Validator could be array of functions. All functions in array will be executed.
 ## Usage
 
 ```
-const validateData = require('../index');
+const validateData = require('@basket/validate-data');
 
 const data = {a: false};
 
@@ -34,19 +34,19 @@ const errors = validateData(data, {
 ```
 
 ```
-const validateData = require('../index');
+const validateData = require('@basket/validate-data');
 
 const data = {a: -1};
 
 const negativeValidator = function(value){
     if (value < 0) {
-        return 'a should be positive number';
+        return 'value should be positive number';
     }
 };
 
 const rangeValidator = function(value){
     if (value < 0 || value > 10) {
-        return 'a should be in range from 0 to 10';
+        return 'value should be in range from 0 to 10';
     }
 };
 
@@ -54,6 +54,6 @@ const errors = validateData(data, {
     a: [negativeValidator, rangeValidator]
 });
 
-// => {a: ['a should be positive number', 'a should be in range from 0 to 10']}
+// => {a: ['value should be positive number', 'value should be in range from 0 to 10']}
 ```
 
